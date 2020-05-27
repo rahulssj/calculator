@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script >
+		var input_var;
+		
+		function getnum(x){
+			var inp=document.getElementById("inp");
+			inp.value+=x;
+
+		}
+		function getop(x){
+			var inp=document.getElementById("inp");
+			inp.value+=x;
+		}
+		function getclear(){
+			document.getElementById("inp").value="";
+		}
+		function getres(){
+
+			var res=document.getElementById("inp");
+
+			var ans=Math.floor(+eval(res.value));
+			document.getElementById("inp").value=ans;
+		}
+		function myFunction(event){
+			var x=event.which;
+			if(x==13){
+				var res=document.getElementById("inp");
+
+			var ans=Math.floor(+eval(res.value));
+			document.getElementById("inp").value=ans;
+			}
+		}
+	</script>
+<style>
+	div>input{
+		padding: 3px;
+		margin-bottom: 4px;
+		width: 245px;
+		height:50px;
+		font-size: 55px; 
+	}
+	div{padding: 4px;
+		background-color: lightgrey;
+		border: 2px solid black;
+		width: 260px;
+		height: 370px;
+	}
+div>button{
+	width: 60px;
+	height: 60px;
+}
+</style>
+	<title></title>
+</head>
+<body>
+	<h1> CALCULATOR</h1>
+<div>
+
+	<input type="text" name="" id="inp"  onkeydown="myFunction(event)"></input><br>
+	<button id="c" onclick="getclear()">C</button><br>
+	<button id="c" value="1" onclick="getnum(1)">1</button>
+	<button id="c" onclick="getnum(2)">2</button>
+	<button id="c" onclick="getnum(3)">3</button>
+	<button id="add" onclick="getop('+')">+</button><br>
+	<button id="c" onclick="getnum(4)">4</button>
+	<button id="c" onclick="getnum(5)">5</button>
+	<button id="c" onclick="getnum(6)">6</button>
+	<button id="sub" onclick="getop('-')">-</button><br>
+	<button id="c" onclick="getnum(7)">7</button>
+	<button id="c" onclick="getnum(8)">8</button>
+	<button id="c"onclick="getnum(9)">9</button>
+	<button id="mul" onclick="getop('*')">*</button><br>
+	<button id="c" onclick="getnum(0)">0</button>
+	<button id="dot" onclick="getnum('.')">.</button>
+	<button id="equalto" onclick="getres() ">=</button>
+	<button id="divide" onclick="getop('/')">/</button>
+</div>
+
+</body>
+</html>
